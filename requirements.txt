@@ -9,3 +9,7 @@ setuptools                    ==80.9.0
 pillow                        ==12.1.0
 langchain-tavily
 langchain-openai
+langchain-chroma
+langchain_huggingface
+plotly
+scikit-learn
