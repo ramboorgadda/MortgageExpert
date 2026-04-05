@@ -11,5 +11,6 @@ langchain-tavily
 langchain-openai
 langchain-chroma
 langchain_huggingface
+sentence-transformers
 plotly
 scikit-learn
