@@ -7,3 +7,87 @@
 2026-04-05 18:58:31,787 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\rules
 2026-04-05 18:58:31,808 - INFO - Fetched 13 documents.
 2026-04-05 18:58:31,808 - INFO - Completed fetching documents.
+2026-04-05 19:29:47,552 - INFO - Use pytorch device_name: cpu
+2026-04-05 19:29:47,554 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-04-05 19:29:48,919 - INFO - Starting the ingestion process.
+2026-04-05 19:29:48,919 - INFO - Fetching documents from C:\Users\rambo\projects\MortgageExpert\data\raw
+2026-04-05 19:29:48,920 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\kb
+2026-04-05 19:29:48,923 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\products
+2026-04-05 19:29:48,926 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\rules
+2026-04-05 19:29:48,928 - INFO - Fetched 13 documents.
+2026-04-05 19:29:48,928 - INFO - Completed fetching documents.
+2026-04-05 19:29:48,928 - INFO - Creating chunks from documents.
+2026-04-05 19:29:48,928 - INFO - Created 13 chunks.
+2026-04-05 19:29:48,928 - INFO - Completed creating chunks. 13 chunks created.
+2026-04-05 19:30:25,813 - INFO - Use pytorch device_name: cpu
+2026-04-05 19:30:25,813 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-04-05 19:30:26,839 - INFO - Starting the ingestion process.
+2026-04-05 19:30:26,839 - INFO - Fetching documents from C:\Users\rambo\projects\MortgageExpert\data\raw
+2026-04-05 19:30:26,839 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\kb
+2026-04-05 19:30:26,842 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\products
+2026-04-05 19:30:26,843 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\rules
+2026-04-05 19:30:26,844 - INFO - Fetched 13 documents.
+2026-04-05 19:30:26,844 - INFO - Completed fetching documents.
+2026-04-05 19:30:26,844 - INFO - Creating chunks from documents.
+2026-04-05 19:30:26,845 - INFO - Created 58 chunks.
+2026-04-05 19:30:26,845 - INFO - Completed creating chunks. 58 chunks created.
+2026-04-05 19:32:29,949 - INFO - Use pytorch device_name: cpu
+2026-04-05 19:32:29,949 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-04-05 19:32:31,034 - INFO - Starting the ingestion process.
+2026-04-05 19:32:31,034 - INFO - Fetching documents from C:\Users\rambo\projects\MortgageExpert\data\raw
+2026-04-05 19:32:31,035 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\kb
+2026-04-05 19:32:31,036 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\products
+2026-04-05 19:32:31,038 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\rules
+2026-04-05 19:32:31,039 - INFO - Fetched 13 documents.
+2026-04-05 19:32:31,039 - INFO - Completed fetching documents.
+2026-04-05 19:32:31,039 - INFO - Creating chunks from documents.
+2026-04-05 19:32:31,040 - INFO - Created 58 chunks.
+2026-04-05 19:32:31,040 - INFO - Completed creating chunks. 58 chunks created.
+2026-04-05 19:32:31,040 - INFO - Creating embeddings for chunks.
+2026-04-05 19:32:31,794 - INFO - Embeddings created successfully.
+2026-04-05 19:32:31,794 - INFO - Completed creating embeddings for chunks. 58 embeddings created.
+2026-04-05 19:55:09,021 - INFO - Use pytorch device_name: cpu
+2026-04-05 19:55:09,022 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-04-05 19:55:10,277 - INFO - Starting the ingestion process.
+2026-04-05 19:55:10,277 - INFO - Fetching documents from C:\Users\rambo\projects\MortgageExpert\data\raw
+2026-04-05 19:55:10,279 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\kb
+2026-04-05 19:55:10,284 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\products
+2026-04-05 19:55:10,288 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\rules
+2026-04-05 19:55:10,291 - INFO - Fetched 13 documents.
+2026-04-05 19:55:10,291 - INFO - Completed fetching documents.
+2026-04-05 19:55:10,291 - INFO - Creating chunks from documents.
+2026-04-05 19:55:10,292 - INFO - Created 58 chunks.
+2026-04-05 19:55:10,293 - INFO - Completed creating chunks. 58 chunks created.
+2026-04-05 19:55:10,293 - INFO - Creating embeddings for chunks.
+2026-04-05 19:55:14,253 - INFO - Embeddings created successfully.
+2026-04-05 19:55:46,326 - INFO - Use pytorch device_name: cpu
+2026-04-05 19:55:46,326 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-04-05 19:55:47,374 - INFO - Starting the ingestion process.
+2026-04-05 19:55:47,374 - INFO - Fetching documents from C:\Users\rambo\projects\MortgageExpert\data\raw
+2026-04-05 19:55:47,375 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\kb
+2026-04-05 19:55:47,378 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\products
+2026-04-05 19:55:47,380 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\rules
+2026-04-05 19:55:47,381 - INFO - Fetched 13 documents.
+2026-04-05 19:55:47,381 - INFO - Completed fetching documents.
+2026-04-05 19:55:47,381 - INFO - Creating chunks from documents.
+2026-04-05 19:55:47,382 - INFO - Created 58 chunks.
+2026-04-05 19:55:47,382 - INFO - Completed creating chunks. 58 chunks created.
+2026-04-05 19:55:47,382 - INFO - Creating embeddings for chunks.
+2026-04-05 19:55:47,903 - INFO - Embeddings created successfully.
+2026-04-05 19:55:47,908 - INFO - There are 58 vectors with 384 dimensions in the vector store
+2026-04-05 19:56:10,600 - INFO - Use pytorch device_name: cpu
+2026-04-05 19:56:10,600 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-04-05 19:56:11,690 - INFO - Starting the ingestion process.
+2026-04-05 19:56:11,690 - INFO - Fetching documents from C:\Users\rambo\projects\MortgageExpert\data\raw
+2026-04-05 19:56:11,691 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\kb
+2026-04-05 19:56:11,695 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\products
+2026-04-05 19:56:11,697 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\rules
+2026-04-05 19:56:11,698 - INFO - Fetched 13 documents.
+2026-04-05 19:56:11,698 - INFO - Completed fetching documents.
+2026-04-05 19:56:11,698 - INFO - Creating chunks from documents.
+2026-04-05 19:56:11,699 - INFO - Created 58 chunks.
+2026-04-05 19:56:11,699 - INFO - Completed creating chunks. 58 chunks created.
+2026-04-05 19:56:11,699 - INFO - Creating embeddings for chunks.
+2026-04-05 19:56:12,209 - INFO - Embeddings created successfully.
+2026-04-05 19:56:12,212 - INFO - There are 58 vectors with 384 dimensions in the vector store
+2026-04-05 19:56:12,213 - INFO - Completed creating embeddings for chunks

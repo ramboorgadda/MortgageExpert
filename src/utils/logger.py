@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 LOG_DIR="logs"
 os.path.exists(LOG_DIR) or os.makedirs(LOG_DIR, exist_ok=True)
-log_filename = os.path.join(LOG_DIR, f"{datetime.now().strftime('%Y-%m-%d')}.log")
+log_filename = os.path.join(LOG_DIR, f"{datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.log")
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",

@@ -25,6 +25,7 @@ logger = get_logger(__name__)
 logger.info("Starting the ingestion process.")
 
 
+
 def fetch_documents():
     """Fetches documents from the specified knowledge base directory."""
     try:
@@ -42,7 +43,40 @@ def fetch_documents():
         logger.error(f"Error fetching documents: {e}")
         raise CustomException("Failed to fetch documents", e)
     
+def create_chunks(documents):
+    """Splits documents into smaller chunks for better processing."""
+    try:
+        logger.info("Creating chunks from documents.")
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=100, chunk_overlap=20)
+        chunks = text_splitter.create_documents([doc.page_content for doc in documents])
+        logger.info(f"Created {len(chunks)} chunks.")
+        return chunks
+    except Exception as e:
+        logger.error(f"Error creating chunks: {e}")
+        raise CustomException("Failed to create chunks", e)
+def create_embeddings(chunks):
+    """Creates embeddings for the given chunks using HuggingFaceEmbeddings."""
+    try:
+        logger.info("Creating embeddings for chunks.")
+        if os.path.exists(DB_NAME):
+            Chroma(persist_directory=DB_NAME, embedding_function=embeddings).delete_collection()
+        
+        vectorstore = Chroma.from_documents(chunks, embeddings, persist_directory=DB_NAME)
+        logger.info("Embeddings created successfully.")
+        collection = vectorstore._collection
+        count = collection.count()
 
+        sample_embedding = collection.get(limit=1, include=["embeddings"])["embeddings"][0]
+        dimensions = len(sample_embedding)
+        logger.info(f"There are {count:,} vectors with {dimensions:,} dimensions in the vector store")
+        return vectorstore
+    except Exception as e:
+        logger.error(f"Error creating embeddings: {e}")
+        raise CustomException("Failed to create embeddings", e) 
 if __name__ == "__main__":
     documents = fetch_documents()
     logger.info("Completed fetching documents.")
+    chunks = create_chunks(documents)
+    logger.info(f"Completed creating chunks. {len(chunks)} chunks created.")
+    embeddings_chunks = create_embeddings(chunks)
+    logger.info(f"Completed creating embeddings for chunks")
