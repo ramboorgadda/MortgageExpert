@@ -73,10 +73,18 @@ def create_embeddings(chunks):
     except Exception as e:
         logger.error(f"Error creating embeddings: {e}")
         raise CustomException("Failed to create embeddings", e) 
-if __name__ == "__main__":
+
+
+def ingest_data():
+    """Runs the full ingestion pipeline and returns the vector store."""
     documents = fetch_documents()
     logger.info("Completed fetching documents.")
     chunks = create_chunks(documents)
     logger.info(f"Completed creating chunks. {len(chunks)} chunks created.")
-    embeddings_chunks = create_embeddings(chunks)
-    logger.info(f"Completed creating embeddings for chunks")
+    vectorstore = create_embeddings(chunks)
+    logger.info("Completed creating embeddings for chunks.")
+    return vectorstore
+
+
+if __name__ == "__main__":
+    ingest_data()

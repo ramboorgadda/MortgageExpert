@@ -1,0 +1,33 @@
+2026-04-06 22:17:26,253 - INFO - Use pytorch device_name: cpu
+2026-04-06 22:17:26,253 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-04-06 22:17:27,507 - INFO - Starting the ingestion process.
+2026-04-06 22:17:27,521 - INFO - All API keys loaded successfully and config initialized.
+2026-04-06 22:17:27,526 - INFO - Use pytorch device_name: cpu
+2026-04-06 22:17:27,526 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-04-06 22:17:41,098 - INFO - Fetching documents from C:\Users\rambo\projects\MortgageExpert\data\raw
+2026-04-06 22:17:41,101 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\kb
+2026-04-06 22:17:41,192 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\products
+2026-04-06 22:17:41,278 - INFO - Processing folder: C:\Users\rambo\projects\MortgageExpert\data\raw\rules
+2026-04-06 22:17:41,328 - INFO - Fetched 13 documents.
+2026-04-06 22:17:41,329 - INFO - Completed fetching documents.
+2026-04-06 22:17:41,329 - INFO - Creating chunks from documents.
+2026-04-06 22:17:41,332 - INFO - Created 58 chunks.
+2026-04-06 22:17:41,332 - INFO - Completed creating chunks. 58 chunks created.
+2026-04-06 22:17:41,332 - INFO - Creating embeddings for chunks.
+2026-04-06 22:17:42,984 - INFO - Embeddings created successfully.
+2026-04-06 22:17:43,014 - INFO - There are 58 vectors with 384 dimensions in the vector store
+2026-04-06 22:17:43,014 - INFO - Completed creating embeddings for chunks.
+2026-04-06 22:19:00,179 - INFO - fetching context for the question : 
+How much Closing Costs Breakdown??
+2026-04-06 22:19:00,182 - ERROR - Error fetching context: 'VectorStoreRetriever' object has no attribute 'get_relevant_documents'
+2026-04-06 22:19:00,182 - ERROR - Error answering question: CustomException.__init__() missing 1 required positional argument: 'error_detail'
+2026-04-06 22:22:37,582 - INFO - Use pytorch device_name: cpu
+2026-04-06 22:22:37,584 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-04-06 22:22:41,051 - INFO - Starting the ingestion process.
+2026-04-06 22:22:41,105 - INFO - All API keys loaded successfully and config initialized.
+2026-04-06 22:22:41,125 - INFO - Use pytorch device_name: cpu
+2026-04-06 22:22:41,126 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2026-04-06 22:22:42,947 - INFO - fetching context for the question : 
+How much Closing Costs Breakdown??
+2026-04-06 22:22:43,392 - INFO - fetched 5 relevant documents for the question
+2026-04-06 22:22:44,469 - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
