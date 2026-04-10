@@ -19,6 +19,7 @@ llm = init_chat_model(
     api_key=GROQ_API_KEY
 )
 DB_NAME= str(Path(__file__).parent.parent.parent / "vector_db")
+CHROMA_COLLECTION_NAME = "mortgageexpert"
 RETRIEVAL_K = 5
 SYSTEM_PROMPT="""
 You are a knowledgeable, friendly assistant representing the company MortgageExpert.
@@ -29,35 +30,42 @@ Context:
 {context}
 """
 
-vectorstore = Chroma(persist_directory=DB_NAME, embedding_function=embeddings)
+def get_retriever():
+    vectorstore = Chroma(
+        collection_name=CHROMA_COLLECTION_NAME,
+        persist_directory=DB_NAME,
+        embedding_function=embeddings,
+    )
+    return vectorstore.as_retriever(search_kwargs={"k": RETRIEVAL_K})
 
-retriever = vectorstore.as_retriever()
-RETRIEVAL_K = 5
 def fetch_context(question : str) -> list[Document]:
     """Fetches the relevent context for a given question from vector db"""
     try:
         logger.info(f"fetching context for the question : {question}")
-        relevant_docs = retriever.invoke(question, k=RETRIEVAL_K)
+        relevant_docs = get_retriever().invoke(question)
         logger.info(f"fetched {len(relevant_docs)} relevant documents for the question")
         return relevant_docs
     except Exception as e:
         logger.error(f"Error fetching context: {e}")
-        raise CustomException(f"Error fetching context: {e}")
+        raise CustomException(f"Error fetching context: {e}", e)
     
-def combined_question(question : str, history: list[dict] = []) -> str:
+def combined_question(question : str, history: list[dict] | None = None) -> str:
     """combine all the user messages into a single string"""
     try:
+        history = history or []
         prior = "\n".join(m["content"] for m in history if m["role"] == "user")
         return prior + "\n" + question
     except Exception as e:
         logger.error(f"Error combining question and history: {e}")
-        raise CustomException(f"Error combining question and history: {e}")
+        raise CustomException(f"Error combining question and history: {e}", e)
     
-def answer_question(question: str, history: list[dict] = []) -> tuple[str,list[Document]]:
+def answer_question(question: str, history: list[dict] | None = None) -> tuple[str,list[Document]]:
     """Answer the question using the llm and context from vector db"""
     try:
+        history = history or []
         combined = combined_question(question, history)
         context = fetch_context(combined)
+        logger.info(f"context fetched: {len(context)} documents")
         system_prompt = SystemMessage(content=SYSTEM_PROMPT.format(context="\n".join(doc.page_content for doc in context)))
         messages = [system_prompt]
         messages.extend(convert_to_messages(history))
@@ -66,4 +74,4 @@ def answer_question(question: str, history: list[dict] = []) -> tuple[str,list[D
         return response.content, context
     except Exception as e:
         logger.error(f"Error answering question: {e}")
-        raise CustomException(f"Error answering question: {e}")
+        raise CustomException(f"Error answering question: {e}", e)

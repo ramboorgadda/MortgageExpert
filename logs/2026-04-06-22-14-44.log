@@ -1,6 +1,0 @@
-2026-04-06 22:14:44,621 - INFO - Use pytorch device_name: cpu
-2026-04-06 22:14:44,621 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
-2026-04-06 22:14:45,854 - INFO - Starting the ingestion process.
-2026-04-06 22:14:45,894 - INFO - All API keys loaded successfully and config initialized.
-2026-04-06 22:14:45,900 - INFO - Use pytorch device_name: cpu
-2026-04-06 22:14:45,900 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2

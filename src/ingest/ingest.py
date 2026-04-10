@@ -17,6 +17,7 @@ from src.utils.logger import get_logger
 from src.utils.custom_exception import CustomException
 load_dotenv(override=True)
 DB_NAME = str(Path(__file__).parent.parent.parent / "vector_db")
+CHROMA_COLLECTION_NAME = "mortgageexpert"
 KNOWLEDGE_BASE = str(Path(__file__).parent.parent.parent / "data" / "raw")
 
 embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
@@ -59,9 +60,18 @@ def create_embeddings(chunks):
     try:
         logger.info("Creating embeddings for chunks.")
         if os.path.exists(DB_NAME):
-            Chroma(persist_directory=DB_NAME, embedding_function=embeddings).delete_collection()
+            Chroma(
+                collection_name=CHROMA_COLLECTION_NAME,
+                persist_directory=DB_NAME,
+                embedding_function=embeddings,
+            ).delete_collection()
         
-        vectorstore = Chroma.from_documents(chunks, embeddings, persist_directory=DB_NAME)
+        vectorstore = Chroma.from_documents(
+            chunks,
+            embeddings,
+            collection_name=CHROMA_COLLECTION_NAME,
+            persist_directory=DB_NAME,
+        )
         logger.info("Embeddings created successfully.")
         collection = vectorstore._collection
         count = collection.count()

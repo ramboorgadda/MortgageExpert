@@ -1,3 +1,0 @@
-2026-04-06 22:09:46,938 - INFO - Use pytorch device_name: cpu
-2026-04-06 22:09:46,940 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
-2026-04-06 22:09:48,443 - INFO - Starting the ingestion process.
